@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+ // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 contract ProposalContract {
@@ -28,7 +28,9 @@ contract ProposalContract {
         proposals[proposalId].yesVotes++;
     }
 
-    function isSucceeded(uint256 proposalId) public view returns (bool) {
+    function isSucceeded(
+        uint256 proposalId
+    ) public view returns (bool) {
         require(proposalId < proposals.length, "Invalid proposal ID");
         return proposals[proposalId].yesVotes >= 10;
     }
